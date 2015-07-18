@@ -8,6 +8,7 @@
 	<source path="src" />
 	
 	<haxelib name="openfl" />
+	<haxelib name="actuate" />
 	
 	<assets path="assets"/>
 	
