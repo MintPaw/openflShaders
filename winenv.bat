@@ -5,9 +5,9 @@ if "$1"=="flash" do (
 )
 
 if "$1"=="c++" do (
-	doskey b=del bin\windows\cpp\bin\openflShaders.exe ^& cls ^& openfl build windows -debug
+	doskey b=del bin\windows\cpp\bin\openflShaders.exe ^& cls ^& openfl build windows -debug -Dlegacy
 	doskey r=bin\windows\cpp\bin\openflShaders.exe
-	doskey bb=del bin\windows\cpp\bin\openflShaders.exe ^& cls ^& openfl build windows -debug ^& echo. ^& echo. ^& echo. ^& bin\windows\cpp\bin\openflShaders.exe
+	doskey bb=del bin\windows\cpp\bin\openflShaders.exe ^& cls ^& openfl build windows -debug -Dlegacy ^& echo. ^& echo. ^& echo. ^& bin\windows\cpp\bin\openflShaders.exe
 )
 
 cls
