@@ -1,5 +1,7 @@
 package;
 
+import motion.Actuate;
+import motion.easing.Linear;
 import openfl.display.Sprite;
 
 class Main extends Sprite
@@ -22,6 +24,8 @@ class Main extends Sprite
 			s.x = Math.random() * stage.stageWidth;
 			s.y = Math.random() * stage.stageHeight;
 			addChild(s);
+
+			Actuate.tween(s, 5 + Math.random() * .5, { rotation: s.rotation + (Math.random() > .5 ? 360 : -360) } ).ease(Linear.easeNone).repeat();
 		}
 	}
 }
