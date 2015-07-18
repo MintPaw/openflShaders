@@ -17,9 +17,10 @@ class Main extends Sprite
 	{
 		for (i in 0...amount) {
 			var s:Sprite = new Sprite();
-			s.graphics.lineStyle(1);
+			s.graphics.beginFill(Std.int(Math.random() * 0xFFFFFF));
 			s.graphics.drawRect(0, 0, Math.random() * 100, Math.random() * 100);
-			s.x = Math.random * stage.stageWidth;
+			s.x = Math.random() * stage.stageWidth;
+			s.y = Math.random() * stage.stageHeight;
 			addChild(s);
 		}
 	}
