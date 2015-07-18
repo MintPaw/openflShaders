@@ -116,7 +116,7 @@ class Main extends Sprite
 	private function getDelta():Float
 	{
 #if flash
-		var delta = flash.Lib.getTimer() - _lastTime;
+		var delta = (flash.Lib.getTimer() - _lastTime) / 1000;
 		_lastTime = flash.Lib.getTimer();
 		return delta;
 #elseif cpp
