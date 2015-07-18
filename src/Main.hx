@@ -23,6 +23,18 @@ class Main extends Sprite
 	{
 		super();
 
+#if flash
+		var textField:openfl.text.TextField = new openfl.text.TextField();
+		textField.width = stage.stageWidth;
+		textField.height = stage.stageHeight;
+		textField.mouseEnabled = false;
+		stage.addChild(textField);
+
+		haxe.Log.trace = function(value:Dynamic, ?infos:haxe.PosInfos):Void {
+			textField.appendText(infos.fileName + ":" + infos.lineNumber + ": " + Std.string(value) + "\n");
+		}
+#end
+
 		addEventListener(Event.ADDED_TO_STAGE, init);
 		stage.frameRate = 120;
 	}
@@ -66,7 +78,7 @@ class Main extends Sprite
 
 	private function update(e:Event):Void
 	{
-		if (
+		trace(getDelta());
 		var speed:Int = 10;
 		if (_up) _player.y -= speed;
 		if (_down) _player.y += speed;
@@ -99,5 +111,18 @@ class Main extends Sprite
 		}
 
 		addChild(new openfl.display.FPS());
+	}
+
+	private function getDelta():Float
+	{
+#if flash
+		var delta = flash.Lib.getTimer() - _lastTime;
+		_lastTime = flash.Lib.getTimer();
+		return delta;
+#elseif cpp
+		var delta = Sys.time() - _lastTime;
+		_lastTime = Sys.time();
+		return delta;
+#end
 	}
 }
