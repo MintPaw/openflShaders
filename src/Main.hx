@@ -10,6 +10,7 @@ class Main extends Sprite
 
 	public function new()
 	{
+		stage.frameRate = 120;
 		doBenchmark(1000);
 
 		super();
@@ -27,7 +28,7 @@ class Main extends Sprite
 
 			Actuate.tween(s, 5 + Math.random() * .5, { rotation: s.rotation + (Math.random() > .5 ? 360 : -360) } ).ease(Linear.easeNone).repeat();
 		}
-		
+
 		addChild(new openfl.display.FPS());
 	}
 }
