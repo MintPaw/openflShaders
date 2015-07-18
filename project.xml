@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="OpenflShaders" package="com.sample.openflshaders" version="1.0.0" company="Company Name" />
+	<app main="Main" path="bin" file="OpenflShaders" />
+	
+	<source path="src" />
+	
+	<haxelib name="openfl" />
+	
+	<assets path="assets"/>
+	
+</project>
