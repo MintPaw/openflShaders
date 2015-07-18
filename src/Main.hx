@@ -78,8 +78,8 @@ class Main extends Sprite
 
 	private function update(e:Event):Void
 	{
-		trace(getDelta());
-		var speed:Int = 10;
+		var delta:Float = getDelta();
+		var speed:Float = 500 * delta;
 		if (_up) _player.y -= speed;
 		if (_down) _player.y += speed;
 		if (_left) _player.x -= speed;
