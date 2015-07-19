@@ -42,6 +42,7 @@ class Main extends Sprite
 	private function init(e:Event):Void
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, init);
+		MintShader.init(this);
 		// doBenchmark(1000, 2);
 
 		{ // Setup player
