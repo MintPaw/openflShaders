@@ -5,7 +5,7 @@ if "%1"=="flash" (
 )
 
 if "%1"=="c++" (
-	doskey b=del bin\windows\cpp\bin\openflShaders.exe ^& cls ^& openfl build windows -debug -Dlegacy
-	doskey r=bin\windows\cpp\bin\openflShaders.exe
-	doskey bb=del bin\windows\cpp\bin\openflShaders.exe ^& cls ^& openfl build windows -debug -Dlegacy ^& echo. ^& echo. ^& echo. ^& bin\windows\cpp\bin\openflShaders.exe
+	doskey b=del bin\windows\cpp\bin\openflShaders.exe ^& cls ^& openfl build windows -debug
+	doskey r=pushd . ^& cd bin\windows\cpp\bin ^& openflShaders.exe ^& popd
+	doskey bb=del bin\windows\cpp\bin\openflShaders.exe ^& cls ^& openfl build windows -debug ^& echo. ^& echo. ^& echo. ^& pushd . ^& cd bin\windows\cpp\bin ^& openflShaders.exe ^& popd
 )
