@@ -64,6 +64,10 @@ class Main extends Sprite
 			stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
 			addEventListener(Event.ENTER_FRAME, update);
 		}
+
+		{ // Setup misc
+			addChild(new openfl.display.FPS());
+		}
 	}
 
 	private function keyDown(e:KeyboardEvent):Void
@@ -115,8 +119,6 @@ class Main extends Sprite
 				Actuate.tween(s, 5 + Math.random() * .5, { rotation: s.rotation + (Math.random() > .5 ? 360 : -360) } ).ease(Linear.easeNone).repeat();
 			}
 		}
-
-		addChild(new openfl.display.FPS());
 	}
 
 	private function getDelta():Float
