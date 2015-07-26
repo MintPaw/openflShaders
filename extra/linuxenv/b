@@ -1,0 +1,14 @@
+rm bin/linux64/cpp/bin/openflShadersTest
+clear
+openfl build linux -debug
+
+if [ -f bin/linux64/cpp/bin/openflShadersTest ]; then
+	echo "Done."
+else
+	echo -e "\n\nFailed to build"
+	echo -ne '\007'
+	sleep .2
+	echo -ne '\007'
+	sleep .2
+	echo -ne '\007'
+fi

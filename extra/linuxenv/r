@@ -1,0 +1,28 @@
+reg="[0-9]"
+
+if [ -f bin/linux64/cpp/bin/openflShadersTest ]; then
+	pushd .
+	cd bin/linux64/cpp/bin
+	./openflShadersTest &
+	popd
+
+	while [ 1 -eq 1 ]; do
+		ans="$(xdotool search openflShadersTest)"
+		
+		if [[ $ans =~ $reg ]]; then
+			break
+		fi
+
+		sleep .01
+	done
+
+	xdotool search openflShadersTest windowmove 1 0
+
+else
+	echo -e "\n\nFailed to open"
+	echo -ne '\007'
+	sleep .2
+	echo -ne '\007'
+	sleep .2
+	echo -ne '\007'
+fi

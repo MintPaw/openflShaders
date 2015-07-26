@@ -2,8 +2,8 @@
 <project>
 	<window width="1280" height="720" />
 	
-	<meta title="OpenflShaders" package="com.sample.openflshaders" version="1.0.0" company="Company Name" />
-	<app main="Main" path="bin" file="OpenflShaders" />
+	<meta title="openflShadersTest" package="com.sample.openflshadersTest" version="1.0.0" company="Company Name" />
+	<app main="Main" path="bin" file="openflShadersTest" />
 	
 	<source path="src" />
 	
