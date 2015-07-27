@@ -45,7 +45,7 @@ class Main extends Sprite
 
 		{ // Setup shaders
 			MintShader.init(this);
-			MintShader.compile("assets/shader/test2.frag");
+			MintShader.compile("assets/shader/heroku.frag");
 		}
 
 		// doBenchmark(1000, 2);
